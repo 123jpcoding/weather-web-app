@@ -1,1 +1,70 @@
- 
+
+* {
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+} 
+
+/*Background image of Canberra*/
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    padding: 5%;
+    background-image: linear-gradient(rgba(0, 8, 51, 0.5), rgba(0, 8, 51, 0.1)), url(images/National-Museum-of-Australia.jpg);
+    background-position: center;
+    background-size: cover;
+}
+/*Centering title and tagline*/
+.wrapper h1, p {
+    padding: 14px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: #fff;
+}
+/*Centering search bar*/
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Styling search bar*/
+.search-bar {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    border-radius: 70px;
+    padding: 10px 20px;
+    backdrop-filter: blur(2px) saturate(200%);
+}
+
+/*Making actual search bar and icon transparent and match above design^^ */
+.search-bar input {
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    font-size: 20px;
+    padding: 10px 15px;
+    color: #fff;
+}
+
+.search-bar ::placeholder {
+    color: #cac7ff;
+}
+
+#submit {
+    background: transparent;
+    border: none;
+    font-size: 30px;
+    color: #fff;
+}
+
+#submit:hover {
+    color: rgb(255, 255, 96);
+    transition: 0.4s;
+}
