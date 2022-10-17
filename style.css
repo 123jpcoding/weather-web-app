@@ -1,20 +1,21 @@
 
 * {
-    margin: 0;
-    padding: 0; 
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-} 
+margin: 0;
+padding: 0; 
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
 
 /*Background image of Canberra*/
 .wrapper {
     width: 100%;
     min-height: 100vh;
     padding: 5%;
-    background-image: linear-gradient(rgba(0, 8, 51, 0.5), rgba(0, 8, 51, 0.1)), url(images/National-Museum-of-Australia.jpg);
+    background-image: linear-gradient(rgba(0, 8, 51, 0.1), rgba(0, 8, 51, 0.5)), url(images/National-Museum-of-Australia.jpg);
     background-position: center;
     background-size: cover;
 }
+
 /*Centering title and tagline*/
 .wrapper h1, p {
     padding: 20px;
@@ -32,7 +33,7 @@
 }
 
 /*Styling search bar*/
-.search-bar {
+.search {
     width: 100%;
     max-width: 600px;
     background: rgba(255, 255, 255, 0.3);
@@ -44,7 +45,7 @@
 }
 
 /*Making actual search bar and icon transparent and match above design^^ */
-.search-bar input {
+.search input {
     background: transparent;
     flex: 1;
     border: 0;
@@ -54,27 +55,27 @@
     color: #fff;
 }
 
-.search-bar ::placeholder {
+.search ::placeholder {
+    color: #cac7ff;   
+}
+
+.search button {
+    background: transparent;
+    border: none;
+    font-size: 2rem;
     color: #cac7ff;
 }
 
-#submit {
-    background: transparent;
-    border: none;
-    font-size: 30px;
-    color: #fff;
-}
-
-#submit:hover {
+.search button:hover {
     color: rgb(255, 255, 96);
     transition: 0.4s;
 }
-
+  
 /*Designing Weather card*/
 .card {
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(2px) saturate(200%);
-    color: #fff;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(4px) saturate(100%);
+    color: black;
     padding: 2em;
     border-radius: 30px;
     width: 100%;
@@ -82,6 +83,28 @@
     margin: 1em;
 }
 
-h1.temp {
-    margin: 0; 
-}
+  .flex {
+    display: flex;
+    align-items: center;
+  }
+  
+  .description {
+    text-transform: capitalize;
+    margin-left: 8px;
+  }
+  
+  .weather.loading {
+    visibility: hidden;
+    max-height: 20px;
+    position: relative;
+  }
+  
+  .weather.loading:after {
+    visibility: visible;
+    content: "Loading...";
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 20px;
+  }
+
