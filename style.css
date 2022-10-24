@@ -11,19 +11,58 @@ font-family: 'Poppins', sans-serif;
     width: 100%;
     min-height: 100vh;
     padding: 5%;
-    background-image: linear-gradient(rgba(0, 8, 51, 0.1), rgba(0, 8, 51, 0.5)), url(images/National-Museum-of-Australia.jpg);
+    background-image: linear-gradient(rgba(0, 8, 51, 0.1), rgba(0, 8, 51, 0.2)), url(images/National-Museum-of-Australia.jpg);
     background-position: center;
     background-size: cover;
 }
 
 /*Centering title and tagline*/
 .wrapper h1, p {
-    padding: 20px;
+    padding: 6px;
     justify-content: center;
     align-items: center;
     display: flex;
     color: #fff;
+    z-index: 3;
 }
+
+/*Styling Heading*/
+.heading {
+  font-size: 8vw;
+  text-transform: uppercase;
+  text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+/*Styling tagline*/
+.tagline {
+  font-size: 2vw;
+  text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+}
+
+/*Cloud animation*/
+@keyframes move-clouds-back {
+  from {background-position: 0, 0;}
+  to {background-position: 10000px 0}
+}
+
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block; 
+  background: transparent url(/images/clouds.png) repeat top center;
+  z-index: 0;
+  opacity: 0.4;
+  animation: move-clouds-back 200s linear infinite;
+  filter: invert(70%);
+}
+
+
 /*Centering search bar*/
 .container {
     display: flex;
@@ -36,12 +75,38 @@ font-family: 'Poppins', sans-serif;
 .search {
     width: 100%;
     max-width: 600px;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
     border-radius: 70px;
     padding: 10px 20px;
-    backdrop-filter: blur(2px) saturate(200%);
+    backdrop-filter: blur(2px) saturate(250%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 35px 45px rgba(0, 8, 51, 0.5);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.search:hover {
+  transform: scale(1.1);
+}
+
+.search:before {
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px; 
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: skewX(45deg) translateX(650px);
+  transition: 0.8s;
+}
+
+.search:hover:before {
+  transform: skewX(45deg) translateX(-150px) scale(1.2);
 }
 
 /*Making actual search bar and icon transparent and match above design^^ */
@@ -67,20 +132,46 @@ font-family: 'Poppins', sans-serif;
 }
 
 .search button:hover {
-    color: rgb(255, 255, 96);
+    color: rgb(0, 8, 51);
     transition: 0.4s;
 }
   
 /*Designing Weather card*/
 .card {
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(4px) saturate(100%);
-    color: black;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px) saturate(150%);
+    color: rgb(0, 8, 51);
     padding: 2em;
     border-radius: 30px;
     width: 100%;
     max-width: 420px;
     margin: 1em;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 35px 45px rgba(0, 8, 51, 0.5);
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card:before {
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px; 
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: skewX(45deg) translateX(650px);
+  transition: 0.6s;
+}
+
+.card:hover:before {
+  transform: skewX(45deg) translateX(-250px) scale(1.2);
 }
 
   .flex {
