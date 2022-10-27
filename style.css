@@ -59,7 +59,7 @@ font-family: 'Poppins', sans-serif;
   z-index: 0;
   opacity: 0.4;
   animation: move-clouds-back 200s linear infinite;
-  filter: invert(70%);
+  filter: invert(80%);
 }
 
 
@@ -89,6 +89,7 @@ font-family: 'Poppins', sans-serif;
     transition: all 0.3s ease-in-out;
 }
 
+/*Search bar hover animation*/
 .search:hover {
   transform: scale(1.1);
 }
@@ -154,6 +155,7 @@ font-family: 'Poppins', sans-serif;
     overflow: hidden;
 }
 
+/*Weather card animation*/
 .card:hover {
   transform: scale(1.1);
 }
